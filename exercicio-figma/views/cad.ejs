@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="inicio.css">
+</head>
+
+<body>
+  <div class="cabeca">
+    <h1>Educação Move o Mundo</h1>
+</div>
+<div class="menu">
+    <a href="/">
+        <p>Início</p>
+        <a href="de">
+            <p>Portal</p>
+            <a href="cad">
+                <p>Inscrição</p>
+</div>
+
+<div class="conteudo">
+  <div class="coluna-lateral-esquerda">
+    <form action="/salvar" method="post">
+      <label for="nome">Digite o nome:</label><br>
+      <input name="nome" id="nome" type="text" placeholder="Digite o seu nome aqui" required>
+      <br>
+      <br>
+      <label for="datadenasc">Digite a data de nascimento:</label>
+      <input name="datadenasc" id="datadenasc" type="text" placeholder="Digite a data de nascimento aqui" required>
+      <br>
+      <br>    
+      <label for="ondemora">Digite onde a criança mora aqui</label>
+      <input name="ondemora" id="ondemora" type="text" placeholder="Digite onde a criança mora aqui" required>
+      <br>
+      <br>
+      <label for="tempo">Digite onde a criança mora aqui</label>
+      <input name="tempo" id="tempo" type="text" placeholder="Digite onde a criança mora aqui" required>
+      <br>
+      <br>
+  
+      <input type="submit" id="1a20" value="enviar">
+    </form>
+</div>
+
+  <%=resultado%>
+</body>
+
+</html>
