@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista</title>
+</head>
+
+<body>
+  <h1>Lista de nomes</h1>
+  <ul>
+    <% for (let i = 0; i < vetorNomes.length; i++) { %>
+    <li><%=vetorNomes[i].nome%></li>
+    <% } %>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+    </tr>
+    <% for (let i = 0; i < vetorNomes.length; i++) { %>
+      <tr>
+        <td><%=vetorNomes[i].nome%></td>
+        <td><%=vetorNomes[i].idade%></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+
+</html>
