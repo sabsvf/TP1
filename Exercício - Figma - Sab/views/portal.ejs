@@ -15,25 +15,31 @@
             </div>
         </header>
 
-        <section class="options">
-            <div class="textos">
-                <a href="/">
-                    <h1>Início</h1>
-                </a>
-            </div>
-            <div class="textos">
-                <a href="de">
-                    <h1>Portal</h1>
-                </a>
-                
-            </div>
-            <div class="textos">
-                <a href="desk">
-                    <h1>Inscrições</h1>
-                </a>
-                
-            </div>
-        </section>
+        <div class="sidebar">
+            <button class="sidebar__toggle" type="button" aria-label="Toggle sidebar"></button>
+            <ul class="sidebar__navigation sidebar-navigation">
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/" title="Home">Início</a>
+              </li>
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/de" title="Formulários">Portal</a>
+              </li>
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/desk" title="Menus Html">Inscrições</a>
+              </li>
+            </ul>
+          </div><!--Sidebar-->
+
+          <script type="text/javascript">
+    
+            var toggleBtn = document.querySelector('.sidebar__toggle');
+            var sidebar = document.querySelector('.sidebar');
+            toggleBtn.addEventListener('click', clickToggleBtnHandler);
+            function clickToggleBtnHandler() {
+                sidebar.classList.toggle('sidebar--active');
+            }
+        </script>
+        
     <div class="conteudo">
         <div class="coluna-lateral-esquerda"> 
             <p>Exemplo de como adicionar dados de uma criança que não esteja estudando</p>

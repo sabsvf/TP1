@@ -16,25 +16,30 @@
             </div>
         </header>
 
-        <section class="options">
-            <div class="textos">
-                <a href="/">
-                    <h1>Início</h1>
-                </a>
-            </div>
-            <div class="textos">
-                <a href="de">
-                    <h1>Portal</h1>
-                </a>
-                
-            </div>
-            <div class="textos">
-                <a href="desk">
-                    <h1>Inscrições</h1>
-                </a>
-                
-            </div>
-        </section>
+        <div class="sidebar">
+            <button class="sidebar__toggle" type="button" aria-label="Toggle sidebar"></button>
+            <ul class="sidebar__navigation sidebar-navigation">
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/" title="Home">Início</a>
+              </li>
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/de" title="Formulários">Portal</a>
+              </li>
+              <li class="sidebar-navigation__item">
+                <a class="sidebar-navigation__link" href="/desk" title="Menus Html">Inscrições</a>
+              </li>
+            </ul>
+          </div><!--Sidebar-->
+
+          <script type="text/javascript">
+    
+            var toggleBtn = document.querySelector('.sidebar__toggle');
+            var sidebar = document.querySelector('.sidebar');
+            toggleBtn.addEventListener('click', clickToggleBtnHandler);
+            function clickToggleBtnHandler() {
+                sidebar.classList.toggle('sidebar--active');
+            }
+        </script>
 
         <section id="container-2">
             <div id="text-container">
@@ -44,58 +49,40 @@
         <div id="formulario">
             <h1>Formulário</h1>
         </div>
-    </div>
-    <div class="login">
-        <form action="/salvar" method="post">
-        
-        <!-- DADOS PESSOAIS-->
-        <fieldset>
-        <legend>Dados Pessoais</legend>
-        <table cellspacing="20">
-        <tbody><tr>
-        <td>
-        <label for="nome">Nome: </label>
-        </td>
-            <td align="left">
-            <input type="text" name="nome" id="nome">
-        </td>
-        <td>
-            <label for="sobrenome">Sobrenome: </label>
-        </td>
-            <td align="left">
-            <input type="text" name="sobrenome" size = "20" id="sobrenome">
-        </td>
-        </tr>
-        <tr>
-        <td>
-            <label>Nascimento: </label>
-        </td>
-        <td align="left">
-            <label for="Nascimento"></label>
-            <input type="date" name="dia" size="20" maxlength="2" value="dd" id="Nascimento">
-        </td>
-        </tr>
-        <tr>
-        <td>
-            <label for="mail">E-mail: </label>
-        </td>
-        <td align="left">
-            <input type="email" name="email" size="30" maxlength="13" id="mail">
-        </td>
-        </tr> 
-        <tr>
-        <td>
-            <label for="mail">Senha: </label>
-        </td>
-        <td align="left">
-            <input type="password" name="pass" size="20" maxlength="40" id="senha">
-            </td>
-            </tr>    
-        </tbody></table>
-        <input type="submit" value="Enviar formulário" id="1a20">
-        </fieldset>
-      </div>
+    
+        <section class="boxLogin container">
+            <div class="content">
+                  
+                  <form class="login" method="post" name="login" action="/salvar">
+                    <h1><i class="icon icon-key-1"></i> Login</h1>
+                    <div class="padding">
+                        <label>
+                            <input type="text" class="campos" placeholder="Nome" name="nome">
+                        </label>
+                        <label>
+                            <input type="text" class="campos" placeholder="Sobrenome" name="sobrenome" >
+                          </label>
+                        <label>
+                        <input type="text" class="campos" placeholder="E-mail" name="email" >
+                      </label>
+                      <label>
+                        <input type="date" class="campos" placeholder="Nascimento"  name="dia" >
+                      </label>
+                      <label>
+                        <input type="password" class="campos" placeholder="Password"  name="pass" >
+                      </label>
+                      <input type="submit" class="btn fade_8S" name="login" value="Enviar">
+                      
+                    </div><!--padding-->
+                    <div class="linksForm">
+                        <%=resultado%>
+                    </div>
+                    
+                  </form>
+             </div>
+             </section><!--Login-->
         </form>
+        
 </body>
 
 </html>
