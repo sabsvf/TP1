@@ -27,9 +27,20 @@ app.post('/salvar', (req, res) => {
         Email: req.body.email,
         Nascimento: req.body.dia,
     }
+    vetorNomes.push(dados)
+    fs.writeFileSync('nomes.json', JSON.stringify(vetorNomes))
     fs.appendFileSync('usuario.json', `\n${JSON.stringify(dados)}`)
     resultado = `Olá, ${nom} ${sob}`
     res.render('inscrição', { resultado })
+})
+let vetorNomes = []
+if (fs.existsSync('nomes.json')) {
+    const dados = fs.readFileSync('nomes.json', 'utf-8')
+    console.log(dados);
+    vetorNomes = JSON.parse(dados)
+}
+app.get('/mostrar', (req, res) => {
+    res.render('lista', { vetorNomes })
 })
 
 app.listen(PORT, () => console.log(`Server rodando na porta ${PORT}`))
